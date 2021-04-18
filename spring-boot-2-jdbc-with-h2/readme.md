@@ -1,7 +1,6 @@
 
 ## Example for using H2 database ##
-H2 is an open-source lightweight Java database. It can be embedded in Java applications or run in the client-server mode. H2 database can be configured to run as in-memory database, which means that data will not persist on the disk. In this brief tutorial, we will look closely at the various features of H2 and its commands, one of the best open-source, multi-model, next generation SQL product. 
-For details visit https://www.tutorialspoint.com/h2_database/index.htm
+H2 is an open-source lightweight Java database. It can be embedded in Java applications or run in the client-server mode. H2 database can be configured to run as in-memory database, which means that data will not persist on the disk. In this brief tutorial, we will look closely at the various features of H2 and its commands, one of the best open-source, multi-model, next generation SQL product. For details visit https://www.tutorialspoint.com/h2_database/index.htm
 
 ## Complete Code Example
 
