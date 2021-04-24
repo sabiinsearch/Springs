@@ -1,5 +1,6 @@
-package com.mine.springboot.jdbc.h2.example.student;
+package com.example.WebWthJDBC_example.student;
 
+@Entity
 public class Student {
 	private Long id;
 	private String name;
