@@ -19,8 +19,7 @@
 
         <form name="StudentSearched" >
              <table>
-                <td><label for="name">${obj.name}</label></td>
-                <td><label for="id">${obj.id}</label></td>                    
+                <td><label for="name">${obj.name}</label></td>                   
                 <td><label for="contactNo">${obj.contactNo}</label></td>                    
             </table>
         </form>

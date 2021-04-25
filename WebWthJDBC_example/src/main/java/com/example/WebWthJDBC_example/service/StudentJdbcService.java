@@ -26,10 +26,11 @@ public class StudentJdbcService {
         return "saved";
     }
     
-    public void searchStd(String s)
+    public Student searchStd(String s)
     {
       Long id = Long.parseLong(s);  
       System.out.println(std_repo.findById(id));
+      return std_repo.findById(id).get();
     }
 }
 

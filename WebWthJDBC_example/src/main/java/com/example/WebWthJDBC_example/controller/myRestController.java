@@ -3,12 +3,12 @@ package com.example.WebWthJDBC_example.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.WebWthJDBC_example.service.StudentJdbcService;
 import com.example.WebWthJDBC_example.model.Student;
 
-// @Component
 @RestController
 public class myRestController {
   
@@ -24,13 +24,14 @@ public class myRestController {
 		return mv; 
     }
      
-    @RequestMapping("/searchStudent")
-    public ModelAndView searchStd() {
-        //Student std = std_service.searchStd(@RequestParam name="id");
-        String id = (@RequestParam ("id"));
-        //std_service.searchStd("101");
+    @PostMapping(path = "/searchStudent", consumes = "application/json", produces = "application/json")
+    public ModelAndView searchStd(@RequestBody String id) {
+
+        Student std = std_service.searchStd(id);
+    //    std_service.searchStd(id);
+    //  std_service.searchStd("101");
         ModelAndView mv = new ModelAndView("search");
-        mv.addObject("obj", id);
+        mv.addObject("obj", std);
         return mv;
     }
     

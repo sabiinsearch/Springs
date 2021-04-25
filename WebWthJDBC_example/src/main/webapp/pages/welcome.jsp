@@ -12,9 +12,6 @@
                 </tr>
                 
                 <tr>
-                    <td><label for="id">Id</label></td>
-                    <td><input type="text" name="id"></td>
-                </tr>
 
                 <tr>
                     <td><label for="contactNo">

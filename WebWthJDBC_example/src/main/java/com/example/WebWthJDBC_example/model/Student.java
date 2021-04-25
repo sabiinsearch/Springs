@@ -10,7 +10,7 @@ import com.example.WebWthJDBC_example.model.Laptop;
 
 
 @Entity
-@Table(name="students")
+@Table(name="Students")
 public class Student {
     
 	@Id

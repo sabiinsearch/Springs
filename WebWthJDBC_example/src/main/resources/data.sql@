@@ -1,5 +1,0 @@
-insert into student
-values(101,'Sarbjeet', '9650560329');
-
-insert into student
-values(10002,'Ravi', 'A1234568');
