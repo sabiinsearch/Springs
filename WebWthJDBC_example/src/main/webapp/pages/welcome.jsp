@@ -4,7 +4,7 @@
     </head>
     <body>
         <h3>Welcome, Enter The Student Details</h3>
-        <form method="POST" action="/saveStudent" >
+        <form method="POST" action="/saveStudent" enctype="multipart/form-data">
              <table>
                 <tr>
                     <td><label for="name">Name</label></td>
@@ -12,6 +12,12 @@
                 </tr>
                 
                 <tr>
+
+                <tr>
+                    <td><label for="stream">
+                      Stream</label></td>
+                    <td><input name="stream"></td>
+                </tr>
 
                 <tr>
                     <td><label for="contactNo">

@@ -10,14 +10,17 @@ import com.example.WebWthJDBC_example.model.Laptop;
 
 
 @Entity
-@Table(name="Students")
+@Table(name="students")
 public class Student {
     
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	
 	private Long contactNo;
+	private String stream;
+	private String indgName;
+	
 
     @OneToOne(mappedBy="student", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Laptop lapi;
@@ -26,17 +29,18 @@ public class Student {
 		super();
 	}
 
-	public Student(Long id, String name, Long number) {
+	public Student(Long id, String indgName, String stm, Long number) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.indgName = indgName;
+		this.stream = stm;
 		this.contactNo = number;
 	}
 
-	public Student(String name, Long number) {
+	public Student(String indgName, String stm) {
 		super();
-		this.name = name;
-		this.contactNo = number;
+		this.indgName = indgName;
+		this.stream = stm;
 	}
 
 	public Long getId() {
@@ -47,18 +51,26 @@ public class Student {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getIndgName() {
+		return indgName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setIndgName(String indgName) {
+		this.indgName = indgName; 
+	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stm) {
+		this.stream = stm;
 	}
 
 	public Long getContactNo() {
 		return contactNo;
 	}
-
+	
 	public void setContactNo(Long contactNo) {
 		this.contactNo = contactNo;
 	}
@@ -73,7 +85,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("Student [id=%s, name=%s]", id, name);
+		return String.format("Student [id=%s, indgName=%s]", id, indgName);
 	}
 }
 

@@ -11,6 +11,8 @@ import javax.persistence.*;
 @Table(name="laptops")
 public class Laptop {
     
+	private String modelName;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long serialNo;
@@ -19,7 +21,7 @@ public class Laptop {
     @JoinColumn(name = "user_id", nullable = false)
 	private Student student;
 
-	private String modelName;
+	
 	
 	public Laptop() {
 		super();

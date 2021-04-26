@@ -1,5 +1,3 @@
-insert into students
-values(101,'Sarbjeet', '9650560329');
-
-insert into students
-values(102,'Devinder', '9650550236');
+insert into students (id, indg_name, stream, contactNo) values
+(101,'Sarbjeet', 'Science', '9650560329'),
+(102,'Devinder', 'Music', '9650550236');
