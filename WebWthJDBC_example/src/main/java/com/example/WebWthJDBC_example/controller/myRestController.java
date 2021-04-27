@@ -52,9 +52,10 @@ public class myRestController {
         return std_service.getStudentsFromRepo();
     }
 
-    @PostMapping(value="/deleteStudent", consumes = "application/json")
-    public void remStudent(Long id) {
-        std_service.deleteStd(id);
+    @PostMapping(
+      value="/deleteStudent", consumes = "application/json")
+    public void remStudent(@RequestBody Student stud) {
+        std_service.deleteStd(stud);
     }      
     
 }

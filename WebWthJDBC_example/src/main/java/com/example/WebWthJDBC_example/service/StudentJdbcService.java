@@ -45,10 +45,11 @@ public class StudentJdbcService {
             newStudent.setIndgName(stud.getIndgName());
             newStudent.setContactNo(stud.getContactNo());
             newStudent.setStream(stud.getStream());
-            newStudent = std_repo.save(newStudent);
-             
+            newStudent = std_repo.save(newStudent); 
             return newStudent;
-        } else {       
+        } else { 
+            System.out.println("saving updated Std as new");
+            std_repo.save(stud);      
             return stud;
         }
     }
@@ -57,8 +58,9 @@ public class StudentJdbcService {
           return (List<Student>)std_repo.findAll();
     }
     
-    public void deleteStd(Long id) {
-         std_repo.deleteById(id);
+    public void deleteStd(Student stud) {
+         std_repo.delete(stud);
+         System.out.println("Deleted Student : "+stud);
     }
 }
 
