@@ -8,7 +8,7 @@ import java.util.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 import com.example.WebWthJDBC_example.model.Student;
-
+//import java.lang.NullPointerException;
  
 //import com.example.WebWthJDBC_example.model.Laptop;
 
@@ -16,7 +16,7 @@ import com.example.WebWthJDBC_example.model.Student;
 public interface StudentRepo extends CrudRepository<Student, Long>
 {
    /*Custom Query method to search*/	
-   public Student findByIndgNameAndContactNo(String name, String no);
+   public Student findByIndgNameAndContactNo(String name, String no);// throws NullPointerException;
    
 }
 
