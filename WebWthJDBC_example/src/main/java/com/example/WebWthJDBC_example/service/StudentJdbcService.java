@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 import com.example.WebWthJDBC_example.dao.StudentRepo;
 import com.example.WebWthJDBC_example.model.Student;
 import com.example.WebWthJDBC_example.model.Search;
+import com.example.WebWthJDBC_example.model.ForUpdate;
+import com.example.WebWthJDBC_example.model.ForDelete;
+import static java.util.Objects.isNull; // to check if Object isEmpty
 
 @Service
 public class StudentJdbcService {
@@ -21,36 +24,48 @@ public class StudentJdbcService {
     @Autowired
     StudentRepo std_repo;
 	
-    public String saveStd(Student std) {  
-        System.out.println("in save student of Service with student =%s"+std.toString());
-        std_repo.save(std);
-        return "saved";
+    public String saveStd(Student std) { 
+        String msg; 
+        Student std_sent = std_repo.findByIndgNameAndContactNo(std.getIndgName(), std.getContactNo());
+        if(isNull(std_sent)) {
+            std_repo.save(std);
+            msg = "saved";
+        } else {
+            System.out.println("Duplicate student kindly update");
+            msg = "Duplicate student kindly update";
+        }
+         
+        return msg;
     }
     
-    public Student searchStd(Long id)
+    public Student searchStd(Search search)
     {
-      //Long id = Long.decode(s);  
-      System.out.println("Got from Postman : "+id);
-      System.out.println(std_repo.findById(id));
-      return std_repo.findById(id).get();
+      System.out.println(std_repo.findByIndgNameAndContactNo(search.getIndgName(), search.getContactNo()));
+      return std_repo.findByIndgNameAndContactNo(search.getIndgName(), search.getContactNo());
      //   return "searched";
     }
 
-    public Student updateStudent(Student stud)
+    public Student updateStudent(ForUpdate std_sent)
     {
-        Optional<Student> std_sent = std_repo.findById(stud.getId());
-        if(std_sent.isPresent()) 
+        
+        Student stdForUpdate = std_repo.findByIndgNameAndContactNo(std_sent.getIndgName(), std_sent.getContactNo());
+    
+        if(isNull(stdForUpdate)) 
         {
-            Student newStudent = stud;
-            newStudent.setIndgName(stud.getIndgName());
-            newStudent.setContactNo(stud.getContactNo());
-            newStudent.setStream(stud.getStream());
+            System.out.println("Adding as new Std");
+            Student newStudent = stdForUpdate;
+            newStudent.setIndgName(std_sent.getIndgName());
+            newStudent.setContactNo(std_sent.getContactNo());
+            newStudent.setStream(std_sent.getStream());
             newStudent = std_repo.save(newStudent); 
             return newStudent;
         } else { 
-            System.out.println("saving updated Std as new");
-            std_repo.save(stud);      
-            return stud;
+            System.out.println("Updating the old Std with "+std_sent.getStream());
+            stdForUpdate.setIndgName(std_sent.getIndgName());
+            stdForUpdate.setContactNo(std_sent.getContactNo());
+            stdForUpdate.setStream(std_sent.getStream());
+            std_repo.save(stdForUpdate);      
+            return stdForUpdate;
         }
     }
 
@@ -58,9 +73,11 @@ public class StudentJdbcService {
           return (List<Student>)std_repo.findAll();
     }
     
-    public void deleteStd(Student stud) {
-         std_repo.delete(stud);
-         System.out.println("Deleted Student : "+stud);
+    public void deleteStd(ForDelete stdToDelte) {
+         Student stdForDeletion = std_repo.findByIndgNameAndContactNo(stdToDelte.getIndgName(), stdToDelte.getContactNo());
+         std_repo.delete(stdForDeletion);
+         System.out.println("Deleted Student : "+stdForDeletion);
+         
     }
 }
 

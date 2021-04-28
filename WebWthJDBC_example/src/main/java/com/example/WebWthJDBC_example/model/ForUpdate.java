@@ -11,18 +11,21 @@ import org.springframework.stereotype.Component;
 
 //@Entity
 @Component
-public class Search {
+public class ForUpdate {
     
 	private String indgName;
 	private String contactNo;
+	private String stream;
 	
-	public Search() {
+	public ForUpdate() {
 		super();
 	}
 
-	public Search(String name) {
+	public ForUpdate(String name, String nu, String stm) {
 		super();
 		this.indgName = name;
+		this.contactNo = nu;
+		this.stream = stm;
 	}
 
 	public String getIndgName() {
@@ -41,9 +44,17 @@ public class Search {
 		this.contactNo = no;
 	}
 
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stm) {
+		this.stream = stm;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Search [indgName=%s, conctactNo]", indgName, contactNo);
+		return String.format("ForUpdate [indgName=%s, conctactNo=%s, stream=%s]", indgName, contactNo, stream);
 	}
 }
 

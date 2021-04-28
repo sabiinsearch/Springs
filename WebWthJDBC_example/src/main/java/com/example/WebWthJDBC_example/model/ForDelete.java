@@ -11,18 +11,20 @@ import org.springframework.stereotype.Component;
 
 //@Entity
 @Component
-public class Search {
+public class ForDelete {
     
 	private String indgName;
 	private String contactNo;
+	private String stream;
 	
-	public Search() {
+	public ForDelete() {
 		super();
 	}
 
-	public Search(String name) {
+	public ForDelete(String name, String nu) {
 		super();
 		this.indgName = name;
+		this.contactNo = nu;
 	}
 
 	public String getIndgName() {
@@ -43,7 +45,7 @@ public class Search {
 
 	@Override
 	public String toString() {
-		return String.format("Search [indgName=%s, conctactNo]", indgName, contactNo);
+		return String.format("ForDelete [indgName=%s, conctactNo=%s]", indgName, contactNo);
 	}
 }
 

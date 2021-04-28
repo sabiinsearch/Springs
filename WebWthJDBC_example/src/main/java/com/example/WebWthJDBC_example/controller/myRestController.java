@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.WebWthJDBC_example.service.StudentJdbcService;
 import com.example.WebWthJDBC_example.model.Student;
 import com.example.WebWthJDBC_example.model.Search;
+import com.example.WebWthJDBC_example.model.ForUpdate;
+import com.example.WebWthJDBC_example.model.ForDelete;
 
 @RestController
 public class myRestController {
@@ -30,9 +32,8 @@ public class myRestController {
     @PostMapping(
      value="/searchStudent", consumes = "application/json", produces = "application/json")
     public ModelAndView searchStd(@RequestBody Search idy) {
-       
-        Long id = idy.getId();
-        Student std = std_service.searchStd(id);
+              
+        Student std = std_service.searchStd(idy);
         ModelAndView mv = new ModelAndView("search");
         mv.addObject("obj", std);
         return mv;
@@ -40,10 +41,10 @@ public class myRestController {
  
     @PostMapping(
      value="/updateStudent", consumes = "application/json", produces = "application/json")
-    public ModelAndView updateStudent(@RequestBody Student std) {
+    public ModelAndView updateStudent(@RequestBody ForUpdate std) {
         Student updatedStd = std_service.updateStudent(std);
         ModelAndView mv = new ModelAndView("search");
-        mv.addObject("obj", std);
+        mv.addObject("obj", updatedStd);
         return mv;
     }
 
@@ -54,7 +55,7 @@ public class myRestController {
 
     @PostMapping(
       value="/deleteStudent", consumes = "application/json")
-    public void remStudent(@RequestBody Student stud) {
+    public void remStudent(@RequestBody ForDelete stud) {
         std_service.deleteStd(stud);
     }      
     

@@ -14,10 +14,10 @@ import com.example.WebWthJDBC_example.model.Laptop;
 public class Student {
     
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
-	private Long contactNo;
+	private String contactNo;
 	private String stream;
 	private String indgName;
 	
@@ -29,9 +29,8 @@ public class Student {
 		super();
 	}
 
-	public Student(Long id, String indgName, String stm, Long number) {
-		super();
-		this.id = id;
+	public Student(String indgName, String stm, String number) {
+		super();		
 		this.indgName = indgName;
 		this.stream = stm;
 		this.contactNo = number;
@@ -67,11 +66,11 @@ public class Student {
 		this.stream = stm;
 	}
 
-	public Long getContactNo() {
+	public String getContactNo() {
 		return contactNo;
 	}
 	
-	public void setContactNo(Long contactNo) {
+	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
 
