@@ -1,4 +1,4 @@
-package com.example.springboot2mySQL_example.model;
+package com.example.WebWthJDBC_example.model;
 
 import javax.persistence.*;
 // import javax.persistence.Entity;
