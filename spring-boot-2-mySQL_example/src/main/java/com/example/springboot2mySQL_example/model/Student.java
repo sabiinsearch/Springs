@@ -1,15 +1,16 @@
-package com.example.springboot2mySQL_example.model;
+package com.example.WebWthJDBC_example.model;
 
 import javax.persistence.*;
 // import javax.persistence.Entity;
 // import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+//import org.springframework.stereotype.Component;
+import com.example.WebWthJDBC_example.model.Laptop;
 
 
 @Entity
-//@Table(name="students")
+@Table(name="students")
 public class Student {
     
 	@Id
