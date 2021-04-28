@@ -16,9 +16,11 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
-	private String contactNo;
-	private String stream;
 	private String indgName;
+	private String stream;
+	private String contactNo;
+	
+	
 	
 
     @OneToOne(mappedBy="student", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
