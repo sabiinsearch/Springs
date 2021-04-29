@@ -7,6 +7,7 @@ import com.example.springboot2mySQL_example.service.MyServiceI;
 import com.example.springboot2mySQL_example.dao.StudentRepo;
 
 import com.example.springboot2mySQL_example.model.Student;
+import com.example.springboot2mySQL_example.model.Search;
   
 import static java.util.Objects.isNull;  // to check if Object isEmpty
 
@@ -30,13 +31,13 @@ public class MyServiceImp implements MyServiceI {
          
         return msg;
     }
- /* 
+  
     public Student searchStd(Search search)
     {
       System.out.println(std_repo.findByIndgNameAndContactNo(search.getIndgName(), search.getContactNo()));
       return std_repo.findByIndgNameAndContactNo(search.getIndgName(), search.getContactNo());
     }
-
+/*
     public Student updateStudent(ForUpdate std_sent)
     {
 
@@ -67,6 +68,6 @@ public class MyServiceImp implements MyServiceI {
          System.out.println("Deleted Student : "+stdForDeletion);
          
     }
- */
+*/ 
 }
 

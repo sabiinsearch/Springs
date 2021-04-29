@@ -1,11 +1,9 @@
 package com.example.springboot2mySQL_example.model;
 
 import javax.persistence.*;
-// import javax.persistence.Entity;
-// import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Component;
+
 import com.example.springboot2mySQL_example.model.Laptop;
 
 
@@ -14,7 +12,7 @@ import com.example.springboot2mySQL_example.model.Laptop;
 public class Student {
     
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	private String contactNo;
@@ -84,7 +82,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("Student [id=%s, indgName=%s]", id, indgName);
+		return String.format("Student [indgName=%s, contactNo=%s, ]", indgName, contactNo);
 	}
 }
 
