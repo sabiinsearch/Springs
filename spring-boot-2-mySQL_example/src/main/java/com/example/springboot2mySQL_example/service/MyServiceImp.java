@@ -12,7 +12,6 @@ import com.example.springboot2mySQL_example.model.Search;
 import static java.util.Objects.isNull;  // to check if Object isEmpty
 
 
-@Component
 public class MyServiceImp implements MyServiceI {
 
     @Autowired

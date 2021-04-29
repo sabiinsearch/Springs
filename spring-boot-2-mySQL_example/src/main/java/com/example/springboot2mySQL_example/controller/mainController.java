@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.springboot2mySQL_example.service.MyServiceI;
 import com.example.springboot2mySQL_example.model.Student; 
 
-import static java.util.Objects.isNull; // to check if Object isEmpty
+//import static java.util.Objects.isNull; // to check if Object isEmpty
 
 @Controller
 @RequestMapping ("/student")
 public class mainController {
     @Autowired
-    MyServiceI student_sevice;
+    MyServiceI student_service;
 
     @PostMapping (value="/add", consumes = "application/json", produces = "application/json")
     public String addStudent(@RequestBody Student stud) { 
-         //student_sevice = ApplicationContextHolder.getContext().getBean(MyServiceImp.class);
-         return student_sevice.saveStd(stud);
+         
+         return student_service.saveStd(stud);
     }
 
 }
