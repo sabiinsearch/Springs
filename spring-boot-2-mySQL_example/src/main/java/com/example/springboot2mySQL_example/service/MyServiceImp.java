@@ -18,6 +18,7 @@ public class MyServiceImp implements MyServiceI {
     StudentRepo std_repo;
 	
     public String saveStd(Student std) { 
+        System.out.println("Saving..."+std);
         String msg; 
         Student std_sent = std_repo.findByIndgNameAndContactNo(std.getIndgName(), std.getContactNo());
         if(isNull(std_sent)) {            

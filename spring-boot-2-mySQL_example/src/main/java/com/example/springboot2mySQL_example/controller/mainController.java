@@ -20,8 +20,19 @@ public class mainController {
 
     @PostMapping (value="/add", consumes = "application/json", produces = "application/json")
     public String addStudent(@RequestBody Student stud) { 
-         
+         System.out.println("From Controller");
          return student_service.saveStd(stud);
     }
+
+    @PostMapping(
+        value="/searchStudent", consumes = "application/json", produces = "application/json")
+       public ModelAndView searchStd(@RequestBody Search idy) {
+                 
+           Student std = std_service.searchStd(idy);
+           ModelAndView mv = new ModelAndView("search");
+           mv.addObject("obj", std);
+           return mv;
+       }
+    
 
 }
