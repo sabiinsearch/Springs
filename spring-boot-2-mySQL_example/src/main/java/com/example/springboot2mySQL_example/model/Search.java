@@ -37,7 +37,7 @@ public class Search {
 
 	@Override
 	public String toString() {
-		return String.format("Search [indgName=%s, conctactNo]", indgName, contactNo);
+		return String.format("Search [indgName=%s, conctactNo=%s]", indgName, contactNo);
 	}
 }
 
