@@ -16,4 +16,6 @@
 - Right Click on the file and Run as Java Application
 - You are all Set 
 
+#### <ins>Initializing Database</ins>
 
+  Refer https://docs.spring.io/spring-boot/docs/1.1.0.M1/reference/html/howto-database-initialization.html
