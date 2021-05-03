@@ -26,7 +26,7 @@ public class MyServiceImp implements MyServiceI {
         Student std_sent = std_repo.findByIndgNameAndContactNo(std.getIndgName(), std.getContactNo());
         if(isNull(std_sent)) {            
             std_repo.save(std);
-            msg = "Saving as New Student"+std_sent;
+            msg = "Saving as New Student";
         } else {
             System.out.println("Duplicate student kindly update");
             msg = "Duplicate student, Hence only update is permitted \n";
@@ -64,7 +64,7 @@ public class MyServiceImp implements MyServiceI {
     }
 
     public List<Student> getStudentsFromRepo() {
-          return (List<Student>)std_repo.findAll();
+          return std_repo.findAll();
     }
     
     public void deleteStd(ForDelete stdToDelte) {
@@ -73,6 +73,5 @@ public class MyServiceImp implements MyServiceI {
          System.out.println("Deleted Student : "+stdForDeletion);
          
     }
- 
+    
 }
-
