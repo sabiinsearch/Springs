@@ -17,7 +17,7 @@ import com.example.springboot2mySQL_example.model.ForDelete;
 import java.util.*; // using List class
 //import static java.util.Objects.isNull; // to check if Object isEmpty
 
-@Controller
+@RestController
 @RequestMapping ("/student")
 public class mainController {
     @Autowired
