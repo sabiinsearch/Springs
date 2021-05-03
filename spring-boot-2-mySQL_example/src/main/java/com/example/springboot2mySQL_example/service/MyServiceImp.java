@@ -49,7 +49,8 @@ public class MyServiceImp implements MyServiceI {
         System.out.println("Student sent is "+std_sent); 
         Student stdForUpdate = std_repo.findByIndgNameAndContactNo(std_sent.getIndgName(), std_sent.getContactNo());
         System.out.println("Student to update is "+stdForUpdate); 
-        if(isNull(stdForUpdate)) {  
+        if(isNull(stdForUpdate)) { 
+            stdForUpdate = new Student(); 
             System.out.println("Adding as new Std");
         }else { 
             System.out.println("Updating the old Std with "+std_sent.getStream());
