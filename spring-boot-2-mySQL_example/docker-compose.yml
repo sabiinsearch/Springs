@@ -5,7 +5,7 @@ services:
     spring-service:
 
       container_name: spring-service
-      image: sabiinsearch/springboot-mysql:1.0
+      image: springboot-mysql:1.0
       ports:
        - "5001:8080"
       depends_on:
