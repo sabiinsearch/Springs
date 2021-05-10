@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.WebWthJDBC_example.service.StudentJdbcService;
 import com.example.WebWthJDBC_example.model.Student;
@@ -22,7 +21,7 @@ public class myRestController {
 
     @PostMapping(value="/saveStudent", consumes = "application/json", produces = "application/json")
     public ModelAndView insideHome(@RequestBody Student std) {        
-        String status = std_service.saveStd(std);
+        System.out.println(std_service.saveStd(std));
         ModelAndView mv = new ModelAndView("after");
 	    mv.addObject("obj", std);        
 		return mv; 

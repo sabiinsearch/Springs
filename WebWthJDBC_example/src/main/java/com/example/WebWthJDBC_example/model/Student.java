@@ -4,10 +4,6 @@ import javax.persistence.*;
 // import javax.persistence.Entity;
 // import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-
-
 @Entity
 //@Table(name="students")
 public class Student {

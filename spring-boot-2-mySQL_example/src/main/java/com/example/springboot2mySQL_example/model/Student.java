@@ -2,11 +2,6 @@ package com.example.springboot2mySQL_example.model;
 
 import javax.persistence.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.example.springboot2mySQL_example.model.Laptop;
-
-
 @Entity
 @Table(name="students")
 public class Student {

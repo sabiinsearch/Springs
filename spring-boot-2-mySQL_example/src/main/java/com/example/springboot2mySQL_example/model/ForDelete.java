@@ -1,7 +1,5 @@
 package com.example.springboot2mySQL_example.model;
 
-import javax.persistence.*;
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,8 +7,7 @@ public class ForDelete {
     
 	private String indgName;
 	private String contactNo;
-	private String stream;
-	
+
 	public ForDelete() {
 		super();
 	}

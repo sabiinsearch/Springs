@@ -1,6 +1,5 @@
 package com.example.WebWthJDBC_example.model;
 
-import org.springframework.stereotype.Component;
 import com.example.WebWthJDBC_example.model.Laptop;
 
 // import javax.persistence.Entity;

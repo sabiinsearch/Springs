@@ -1,6 +1,6 @@
 package com.example.WebWthJDBC_example.model;
 
-import javax.persistence.*;
+
 // import javax.persistence.Entity;
 // import javax.persistence.Id;
 
@@ -15,7 +15,7 @@ public class ForDelete {
     
 	private String indgName;
 	private String contactNo;
-	private String stream;
+
 	
 	public ForDelete() {
 		super();

@@ -1,8 +1,5 @@
 package com.example.springboot2mySQL_example.model;
 
-import org.springframework.stereotype.Component;
-import com.example.springboot2mySQL_example.model.Student;
-
 // import javax.persistence.Entity;
 // import javax.persistence.Id;
 import javax.persistence.*;

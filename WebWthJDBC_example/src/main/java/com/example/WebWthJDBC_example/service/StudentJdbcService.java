@@ -1,7 +1,6 @@
 package com.example.WebWthJDBC_example.service;
 
 import java.util.*;
-import org.springframework.stereotype.Component;
 //import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import com.example.WebWthJDBC_example.model.Search;
 import com.example.WebWthJDBC_example.model.ForUpdate;
 import com.example.WebWthJDBC_example.model.ForDelete;
 import static java.util.Objects.isNull; // to check if Object isEmpty
-import java.lang.NullPointerException;
+
 
 @Service
 public class StudentJdbcService {

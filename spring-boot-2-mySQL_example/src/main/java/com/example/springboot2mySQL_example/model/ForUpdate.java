@@ -1,7 +1,5 @@
 package com.example.springboot2mySQL_example.model;
 
-import javax.persistence.*;
-
 import org.springframework.stereotype.Component;
 
 @Component

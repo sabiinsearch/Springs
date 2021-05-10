@@ -1,9 +1,8 @@
 package com.example.springboot2mySQL_example.service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.springboot2mySQL_example.service.MyServiceI;
+//import com.example.springboot2mySQL_example.service.MyServiceI;
 import com.example.springboot2mySQL_example.dao.StudentRepo;
 
 import com.example.springboot2mySQL_example.model.Student;

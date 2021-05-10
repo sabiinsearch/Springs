@@ -1,6 +1,5 @@
 package com.example.WebWthJDBC_example.model;
 
-import javax.persistence.*;
 // import javax.persistence.Entity;
 // import javax.persistence.Id;
 

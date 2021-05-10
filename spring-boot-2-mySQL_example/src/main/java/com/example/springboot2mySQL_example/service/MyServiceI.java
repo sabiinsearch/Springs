@@ -2,7 +2,6 @@ package com.example.springboot2mySQL_example.service;
 
 import java.util.*;
 import org.springframework.stereotype.Service;
-import com.example.springboot2mySQL_example.dao.StudentRepo;
 import com.example.springboot2mySQL_example.model.Student;
 import com.example.springboot2mySQL_example.model.Search;
 import com.example.springboot2mySQL_example.model.ForUpdate;
